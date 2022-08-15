@@ -1,0 +1,25 @@
+.contact__list {
+    display: flex;
+    margin-left: auto;
+}
+
+.contact__link {
+    display: flex;
+    padding: 32px 0;
+    align-items: center;
+    transition: color, var(--anim-fast) var(--transition-func);
+
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
+}
+
+.contact__item:not(:last-child) {
+    margin-right: 50px;
+}
+
+.contact__icon {
+    margin-right: 10px;
+    fill: currentColor;
+}

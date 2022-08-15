@@ -1,0 +1,18 @@
+.feature__title {
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.feature__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 25px;
+    padding-right: 100px;
+    padding-bottom: 25px;
+    padding-left: 100px;
+    background-color: var(--backgraund-color-grey);
+    margin-bottom: 30px;
+}
