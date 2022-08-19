@@ -1,5 +1,23 @@
 .clients__item {
-    --item: 6;
+    @media screen and (min-width: 480px) {
+        --item: 2
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        --item: 3
+    }
+
+    @media screen and (min-width: 1200px) {
+        --item: 6
+    }
+}
+
+.clients__list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .clients__link {

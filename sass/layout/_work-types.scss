@@ -1,5 +1,8 @@
 .work-types {
     padding-top: 0;
+    @media screen and (max-width: 1199px) {
+        display: none;
+    }
 }
 
 .work-types__list {

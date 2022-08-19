@@ -32,6 +32,17 @@
         <a class="logo header-logo" href="./index.html">
           Web<span class="logo__text">Studio</span>
         </a>
+        <!-- Menu button -->
+        <button class="menu-btn" type="button" js-open-menu>
+          <svg
+            class="menu-btn__icon"
+            width="40"
+            height="40"
+            aria-label="Переключатель мобільного меню"
+          >
+            <use href="./images/icons.svg#menu-btn"></use>
+          </svg>
+        </button>
         <!--Navigation-->
         <nav class="nav">
           <ul class="nav__list nav-list list">
@@ -85,7 +96,7 @@
         <div class="container">
           <h2 class="visually-hidden">Особенности</h2>
           <ul class="feature-list list card-set">
-            <li class="feature-list__item card-item">
+            <li class="feature__item card-item">
               <div class="feature__container">
                 <svg class="feature__icon" width="70" height="70">
                   <use href="./images/icons.svg#antenna"></use>
@@ -97,7 +108,7 @@
                 формированию позиции.
               </p>
             </li>
-            <li class="feature-list__item card-item">
+            <li class="feature__item card-item">
               <div class="feature__container">
                 <svg class="feature__icon" width="70" height="70">
                   <use href="./images/icons.svg#clock"></use>
@@ -109,7 +120,7 @@
                 кадров влечет за собой.
               </p>
             </li>
-            <li class="feature-list__item card-item">
+            <li class="feature__item card-item">
               <div class="feature__container">
                 <svg class="feature__icon" width="70" height="70">
                   <use href="./images/icons.svg#diagram"></use>
@@ -121,7 +132,7 @@
                 степени обуславливает.
               </p>
             </li>
-            <li class="feature-list__item card-item">
+            <li class="feature__item card-item">
               <div class="feature__container">
                 <svg class="feature__icon" width="70" height="70">
                   <use href="./images/icons.svg#astronaut"></use>
@@ -184,8 +195,8 @@
                 class="team__img"
                 src="./images/team/photo_1.jpg"
                 alt="Фото Игорь Демьяненко"
-                width="270"
-                height="260"
+                max-width="100%"
+                max-height="auto"
               />
               <div class="team__wrapper">
                 <h3 class="team__title">Игорь Демьяненко</h3>
@@ -251,8 +262,8 @@
                 class="team__img"
                 src="./images/team/photo_2.jpg"
                 alt="Фото Ольга Репина"
-                width="270"
-                height="260"
+                max-width="100%"
+                max-height="auto"
               />
               <div class="team__wrapper">
                 <h3 class="team__title">Ольга Репина</h3>
@@ -318,8 +329,8 @@
                 class="team__img"
                 src="./images/team/photo_3.jpg"
                 alt="Фото Николай Тарасов"
-                width="270"
-                height="260"
+                max-width="100%"
+                max-height="auto"
               />
               <div class="team__wrapper">
                 <h3 class="team__title">Николай Тарасов</h3>
@@ -385,8 +396,8 @@
                 class="team__img"
                 src="./images/team/photo_4.jpg"
                 alt="Фото Михаил Ермаков"
-                width="270"
-                height="260"
+                max-width="100%"
+                max-height="auto"
               />
               <div class="team__wrapper">
                 <h3 class="team__title">Михаил Ермаков</h3>
@@ -454,8 +465,8 @@
       <section class="clients section">
         <div class="container">
           <h2 class="clients__title section-title">Постоянные клиенты</h2>
-          <ul class="card-set list">
-            <li class="card-item clients__item">
+          <ul class="clients__list card-set list">
+            <li class="clients__item">
               <a
                 class="clients__link link"
                 target="_blank"
@@ -468,7 +479,7 @@
                 </svg>
               </a>
             </li>
-            <li class="card-item clients__item">
+            <li class="clients__item">
               <a
                 class="clients__link link"
                 target="_blank"
@@ -481,7 +492,7 @@
                 </svg>
               </a>
             </li>
-            <li class="card-item clients__item">
+            <li class="clients__item">
               <a
                 class="clients__link link"
                 target="_blank"
@@ -494,7 +505,7 @@
                 </svg>
               </a>
             </li>
-            <li class="card-item clients__item">
+            <li class="clients__item">
               <a
                 class="clients__link link"
                 target="_blank"
@@ -507,7 +518,7 @@
                 </svg>
               </a>
             </li>
-            <li class="card-item clients__item">
+            <li class="clients__item">
               <a
                 class="clients__link link"
                 target="_blank"
@@ -520,7 +531,7 @@
                 </svg>
               </a>
             </li>
-            <li class="card-item clients__item">
+            <li class="clients__item">
               <a
                 class="clients__link link"
                 target="_blank"
@@ -652,7 +663,7 @@
                 placeholder="E-mail"
               />
             </label>
-            <button class="hero-btn" type="submit">
+            <button class="hero-btn hero-btn--footer" type="submit">
               Подписаться
               <svg class="footer-subscribe__icon" width="24px" height="24px">
                 <use href="./images/icons.svg#icon-send"></use>
@@ -751,6 +762,9 @@
         </form>
       </div>
     </div>
+    
+    </div>
     <script src="./js/modal.js"></script>
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>

@@ -1,7 +1,15 @@
 .portfolio-list {
-    --item: 3;
+    @media screen and (min-width: 768px) {
+        --item: 2;
+    }
+    @media screen and (min-width: 1200px) {
+        --item: 3;
+    }
 }
-
+.portfolio-list__item{
+    display: flex;
+    flex-direction: column;
+}
 .portfolio-list__container {
     padding-top: 20px;
     padding-right: 24px;
@@ -9,6 +17,8 @@
     padding-left: 24px;
     border: 1px solid #EEEEEE;
     border-top: none;
+    
+    flex-grow: 1;
 }
 
 .portfolio-list__thumb {
@@ -19,6 +29,9 @@
 .portfolio-list__link {
     display: block;
     transition: box-shadow var(--anim-fast) cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 
     &:hover,
     &:focus {

@@ -32,6 +32,17 @@
         <a class="logo header-logo" href="./index.html">
           Web<span class="logo__text">Studio</span>
         </a>
+        <!-- Menu button -->
+        <button class="menu-btn" type="button" js-open-menu>
+          <svg
+            class="menu-btn__icon"
+            width="40"
+            height="40"
+            aria-label="Переключатель мобільного меню"
+          >
+            <use href="./images/icons.svg#menu-btn"></use>
+          </svg>
+        </button>
         <!--Navigation-->
         <nav class="nav">
           <ul class="nav__list nav-list list">
@@ -73,7 +84,7 @@
     </header>
     <!--Main-->
     <main>
-      <!-- Портфолио -->
+      <!-- Portfolio filter -->
       <section class="section">
         <div class="container">
           <h1 class="visually-hidden">Портфолио</h1>
@@ -94,6 +105,7 @@
               <button class="filter-btn" type="button">Маркетинг</button>
             </li>
           </ul>
+          <!-- Portfolio cards -->
           <ul class="portfolio-list card-set portfolio list">
             <li class="portfolio-list__item card-item">
               <a
@@ -502,7 +514,7 @@
                 placeholder="E-mail"
               />
             </label>
-            <button class="hero-btn" type="submit">
+            <button class="hero-btn hero-btn--footer" type="submit">
               Подписаться
               <svg class="footer-subscribe__icon" width="24px" height="24px">
                 <use href="./images/icons.svg#icon-send"></use>

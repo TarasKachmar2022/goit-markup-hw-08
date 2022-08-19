@@ -1,0 +1,27 @@
+.mobile-menu{
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    padding: 48px 40px;
+    background-color: var(---backgraund-color-white);
+}
+.nav__list--menu{
+    display: block;
+}
+.contact__list--menu{
+    display: block;
+}
+.contact__link--menu{
+    padding: 16px 0;
+}
+.menu-close {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    fill: #000000;
+    cursor: pointer;
+    z-index: 1000;
+}

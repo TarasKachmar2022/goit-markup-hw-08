@@ -1,7 +1,16 @@
 .filter-list {
     display: flex;
-    margin-bottom: 50px;
-    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    justify-content: left;
+    @media screen and (min-width: 768px) {
+        margin-bottom: 30px;
+        justify-content: center;
+    }
+    @media screen and (min-width: 1200px) {
+        margin-bottom: 50px;
+        justify-content: center;
+    }
 }
 
 .filter-btn {
@@ -15,6 +24,7 @@
     cursor: pointer;
     border: none;
     border-radius: 4px;
+    margin-bottom: 15px;
     padding: 6px 22px;
     display: block;
     transition: color var(--anim-fast) var(--transition-func),
