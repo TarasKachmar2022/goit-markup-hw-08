@@ -1,6 +1,6 @@
 .modal {
-    width: 528px;
-    min-height: 581px;
+    width: 450px;
+    min-height: 609px;
     background-color: var(--backgraund-color-white);
     border-radius: 4px;
     position: absolute;
@@ -10,6 +10,10 @@
     opacity: 1;
     transform: translate(-50%, -50%);
     transition: transform var(--anim-fast) var(--transition-func);
+    @media screen and (min-width: 1200px) {
+        width: 528px;
+        min-height: 581px;
+    }
 }
 .backdrop.is-hidden modal {
     transform: translate(-50%, -50%) scale(0) rotate(90deg);

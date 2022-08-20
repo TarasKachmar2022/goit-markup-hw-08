@@ -25,22 +25,27 @@
     <!-- Custom styles end -->
   </head>
   <!--Body-->
-  <body>
+  <body class="document.body">
     <!--Header-->
     <header class="header header-line">
       <div class="container header-container">
         <a class="logo header-logo" href="./index.html">
           Web<span class="logo__text">Studio</span>
         </a>
-        <!-- Menu button -->
-        <button class="menu-btn" type="button" js-open-menu>
+        <!-- Mobile menu -->
+        <button
+          class="menu-toggle js-open-menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          type="button"
+        >
           <svg
-            class="menu-btn__icon"
+            class="menu-toggle__icon"
             width="40"
             height="40"
             aria-label="Переключатель мобільного меню"
           >
-            <use href="./images/icons.svg#menu-btn"></use>
+            <use href="./images/icons.svg#menu-icon"></use>
           </svg>
         </button>
         <!--Navigation-->
@@ -191,13 +196,50 @@
           <h2 class="section-title">Наша команда</h2>
           <ul class="team__list card-set list">
             <li class="team__item card-item">
-              <img
-                class="team__img"
-                src="./images/team/photo_1.jpg"
-                alt="Фото Игорь Демьяненко"
-                max-width="100%"
-                max-height="auto"
-              />
+              <picture>
+                <!-- desktop screen -->
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images\team\photo_1@1x_lg.webp 1x, ./images\team\photo_1@2x_lg.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images\team\photo_1@1x_lg.jpg 1x, ./images\team\photo_1@2x_lg.jpg 2x"
+                  type="image/jpg"
+                />
+
+                <!-- tablet screen -->
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images\team\photo_1@1x_md.webp 1x, ./images\team\photo_1@2x_md.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images\team\photo_1@1x_md.jpg 1x, ./images\team\photo_1@2x_md.jpg 2x"
+                  type="image/jpg"
+                />
+
+                <!-- mobile screen -->
+                <source
+                  media="(max-width: 767px)"
+                  srcset="./images\team\photo_1@1x_sm.webp 1x, ./images\team\photo_1@2x_sm.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(max-width: 767px)"
+                  srcset="./images\team\photo_1@1x_sm.jpg 1x, ./images\team\photo_1@2x_sm.jpg 2x"
+                  type="image/jpg"
+                />
+                <img
+                  class="team__img"
+                  src="./images\team\photo_1@1x_sm.jpg"
+                  alt="Фото Игорь Демьяненко"
+                  max-width="450"
+                  max-height="auto"
+                />
+              </picture>
               <div class="team__wrapper">
                 <h3 class="team__title">Игорь Демьяненко</h3>
                 <p class="team__descr" lang="en">Product Designer</p>
@@ -258,13 +300,50 @@
               </div>
             </li>
             <li class="team__item card-item">
-              <img
-                class="team__img"
-                src="./images/team/photo_2.jpg"
-                alt="Фото Ольга Репина"
-                max-width="100%"
-                max-height="auto"
-              />
+              <picture>
+                <!-- desktop screen -->
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images\team\photo_2@1x_lg.webp 1x, ./images\team\photo_2@2x_lg.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images\team\photo_2@1x_lg.jpg 1x, ./images\team\photo_2@2x_lg.jpg 2x"
+                  type="image/jpg"
+                />
+
+                <!-- tablet screen -->
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images\team\photo_2@1x_md.webp 1x, ./images\team\photo_2@2x_md.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images\team\photo_2@1x_md.jpg 1x, ./images\team\photo_2@2x_md.jpg 2x"
+                  type="image/jpg"
+                />
+
+                <!-- mobile screen -->
+                <source
+                  media="(max-width: 767px)"
+                  srcset="./images\team\photo_2@1x_sm.webp 1x, ./images\team\photo_2@2x_sm.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(max-width: 767px)"
+                  srcset="./images\team\photo_2@1x_sm.jpg 1x, ./images\team\photo_2@2x_sm.jpg 2x"
+                  type="image/jpg"
+                />
+                <img
+                  class="team__img"
+                  src="./images/team/photo_2.jpg"
+                  alt="Фото Ольга Репина"
+                  max-width="450"
+                  max-height="auto"
+                />
+              </picture>
               <div class="team__wrapper">
                 <h3 class="team__title">Ольга Репина</h3>
                 <p class="team__descr" lang="en">Frontend Developer</p>
@@ -325,13 +404,50 @@
               </div>
             </li>
             <li class="team__item card-item">
-              <img
-                class="team__img"
-                src="./images/team/photo_3.jpg"
-                alt="Фото Николай Тарасов"
-                max-width="100%"
-                max-height="auto"
-              />
+              <picture>
+                <!-- desktop screen -->
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images\team\photo_3@1x_lg.webp 1x, ./images\team\photo_3@2x_lg.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images\team\photo_3@1x_lg.jpg 1x, ./images\team\photo_3@2x_lg.jpg 2x"
+                  type="image/jpg"
+                />
+
+                <!-- tablet screen -->
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images\team\photo_3@1x_md.webp 1x, ./images\team\photo_3@2x_md.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images\team\photo_3@1x_md.jpg 1x, ./images\team\photo_3@2x_md.jpg 2x"
+                  type="image/jpg"
+                />
+
+                <!-- mobile screen -->
+                <source
+                  media="(max-width: 767px)"
+                  srcset="./images\team\photo_3@1x_sm.webp 1x, ./images\team\photo_3@2x_sm.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(max-width: 767px)"
+                  srcset="./images\team\photo_3@1x_sm.jpg 1x, ./images\team\photo_3@2x_sm.jpg 2x"
+                  type="image/jpg"
+                />
+                <img
+                  class="team__img"
+                  src="./images/team/photo_3.jpg"
+                  alt="Фото Николай Тарасов"
+                  max-width="450"
+                  max-height="auto"
+                />
+              </picture>
               <div class="team__wrapper">
                 <h3 class="team__title">Николай Тарасов</h3>
                 <p class="team__descr" lang="en">Marketing</p>
@@ -392,13 +508,51 @@
               </div>
             </li>
             <li class="team__item card-item">
-              <img
-                class="team__img"
-                src="./images/team/photo_4.jpg"
-                alt="Фото Михаил Ермаков"
-                max-width="100%"
-                max-height="auto"
-              />
+              <picture>
+                <!-- desktop screen -->
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images\team\photo_4@1x_lg.webp 1x, ./images\team\photo_4@2x_lg.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images\team\photo_4@1x_lg.jpg 1x, ./images\team\photo_4@2x_lg.jpg 2x"
+                  type="image/jpg"
+                />
+
+                <!-- tablet screen -->
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images\team\photo_4@1x_md.jpg 1x, ./images\team\photo_4@2x_md.jpg 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images\team\photo_4@1x_md.jpg 1x, ./images\team\photo_4@2x_md.jpg 2x"
+                  type="image/jpg"
+                />
+
+                <!-- mobile screen -->
+                <source
+                  media="(max-width: 767px)"
+                  srcset="./images\team\photo_4@1x_sm.webp 1x, ./images\team\photo_4@2x_sm.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(max-width: 767px)"
+                  srcset="./images\team\photo_4@1x_sm.jpg 1x, ./images\team\photo_4@2x_sm.jpg 2x"
+                  type="image/jpg"
+                />
+                <img
+                  class="team__img"
+                  src="./images/team/photo_4.jpg"
+                  alt="Фото Михаил Ермаков"
+                  max-width="450"
+                  max-height="auto"
+                />
+              </picture>
+
               <div class="team__wrapper">
                 <h3 class="team__title">Михаил Ермаков</h3>
                 <p class="team__descr" lang="en">UI Designer</p>
@@ -762,9 +916,100 @@
         </form>
       </div>
     </div>
-    
+    <!-- Mobile menu -->
+    <div class="menu-container js-menu-container" id="mobile-menu">
+      <button class="menu-toggle menu-toggle--close js-close-menu">
+        <svg width="19" height="19">
+          <use href="./images/icons.svg#menu-close"></use>
+        </svg>
+      </button>
+      <ul class="mobile-menu">
+        <!--Navigation menu-->
+          <ul class="nav__list nav-list nav-list--menu list">
+            <li class="nav__item nav__item--menu">
+              <a class="nav__link nav__link--menu link menu--current" href="./index.html"
+                >Студия</a
+              >
+            </li>
+            <li class="nav__item nav__item--menu">
+              <a class="nav__link nav__link--menu link" href="./portfolio.html">Портфолио</a>
+            </li>
+            <li class="nav__item nav__item--menu">
+              <a class="nav__link nav__link--menu link" href="">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <!--Contacts menu-->
+        <ul class="contact__list contact__list--menu list">
+          <li class="contact__item contact__item--menu-phone">
+            <a class="contact__link contact__link--menu link" href="tel:+380961111111">
+              +38 096 111 11 11</a
+            >
+          </li>
+          <li class="contact__item contact__item--menu-envelope">
+            <a class="contact__link contact__link--menu link" href="mailto:info@devstudio.com">
+              info@devstudio.com
+            </a>
+          </li>
+        </ul>
+        <!-- Socials menu -->
+        <ul class="social__list--menu list">
+          <li class="social__item--menu">
+            <a
+              class="social__link--menu link"
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >Instagram
+            </a>
+          </li>
+          <span class="line-vertical">|</span>
+          <li class="social__item--menu">
+            <a
+              class="social__link--menu link"
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="twitter"
+            >
+            Twitter
+            </a>
+          </li>
+          <span class="line-vertical">|</span>
+          <li class="social__item--menu">
+            <a
+              class="social__link--menu link"
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="facebook"
+            >
+            Facebook 
+            </a>
+          </li>
+          <span class="line-vertical">|</span>
+          <li class="social__item--menu">
+            <a
+              class="social__link--menu link"
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="linkedin"
+            >
+            Linkedin 
+            </a>
+          </li>
+        </ul>
+      </ul>
     </div>
     <script src="./js/modal.js"></script>
     <script src="./js/mobile-menu.js"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowszSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KKTBulTLEGz9chfBoWYyZJL+MU06p/yBuuMO/8jI7029YRZ2uBLA=="
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

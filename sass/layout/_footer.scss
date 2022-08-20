@@ -95,8 +95,10 @@ display: block;
     &::placeholder {
         color: rgba(255, 255, 255, 0.6);
     }
-    @media screen and (min-width:480px) and (max-width: 1199px) {
+    @media screen and (max-width: 1199px) {
         margin-bottom: 20px;
+    }
+    @media screen and (min-width:480px) and (max-width: 1199px) {
         width: 450px;
     }
     @media screen and (min-width: 1200px) {
