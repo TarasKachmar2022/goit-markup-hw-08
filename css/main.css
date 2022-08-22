@@ -19,7 +19,7 @@
   --icon-color-grey: #AFB1B8;
   /* Other */
   --indent: 30px;
-  --item: 4;
+  --item: 1;
   --anim-fast: 250ms;
   --transition-func: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -71,25 +71,18 @@ img {
   pointer-events: none;
 }
 
-@media screen and (min-width: 768px) {
-  .card-set {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    gap: var(--indent);
-  }
+.card-set {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: var(--indent);
 }
 
 .card-item {
   -ms-flex-preferred-size: calc((100% - var(--indent) * (var(--item) - 1)) / var(--item));
       flex-basis: calc((100% - var(--indent) * (var(--item) - 1)) / var(--item));
-}
-@media screen and (max-width: 767px) {
-  .card-item {
-    margin-bottom: var(--indent);
-  }
 }
 
 body {
@@ -178,14 +171,14 @@ body {
 }
 
 .modal {
-  width: 450px;
-  min-height: 609px;
+  width: 320px;
   background-color: var(--backgraund-color-white);
   border-radius: 4px;
   position: absolute;
   top: 50%;
   left: 50%;
   padding: 40px;
+  overflow: auto;
   opacity: 1;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -194,11 +187,31 @@ body {
   transition: transform var(--anim-fast) var(--transition-func);
   transition: transform var(--anim-fast) var(--transition-func), -webkit-transform var(--anim-fast) var(--transition-func);
 }
+@media screen and (max-width: 479px) {
+  .modal {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+@media screen and (min-width: 450px) {
+  .modal {
+    width: 450px;
+  }
+}
+@media screen and (min-width: 480px) {
+  .modal {
+    height: 609px;
+  }
+}
 @media screen and (min-width: 1200px) {
   .modal {
     width: 528px;
     min-height: 581px;
   }
+}
+
+.backdrop {
+  overflow: auto;
 }
 
 .backdrop.is-hidden modal {
@@ -559,6 +572,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  overflow: auto;
   width: 100vw;
   height: 100vh;
   padding: 32px 40px;
@@ -577,13 +591,28 @@ body {
           transform: translateX(0);
 }
 
+.mobile-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 48px;
+}
+
 .nav-list--menu {
-  display: block;
-  margin-bottom: 282px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: auto;
 }
 
 .nav__link--menu {
-  padding: 16px 0;
+  padding: 0;
+  margin: 16px 0;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -607,8 +636,15 @@ body {
 }
 
 .contact__list--menu {
-  display: block;
-  margin-bottom: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 32px;
+  margin-left: 0;
 }
 @media screen and (min-width: 768px) {
   .contact__list--menu {
@@ -627,10 +663,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 16px 0;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0;
   -webkit-transition: color, var(--anim-fast) var(--transition-func);
   transition: color, var(--anim-fast) var(--transition-func);
 }
@@ -742,7 +778,8 @@ body {
 }
 @media screen and (max-width: 767px) and (min-device-pixel-ratio: 2), screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), screen and (max-width: 767px) and (min-resolution: 192dpi), screen and (max-width: 767px) and (min-resolution: 2dppx) {
   .hero {
-    background-image: url(../images/hero/hero-bg_sm@2x.jpg);
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/hero/hero-bg_sm@2x.jpg);
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero-bg_sm@2x.jpg);
   }
 }
 @media screen and (min-width: 480px) {
@@ -759,7 +796,8 @@ body {
 }
 @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
   .hero {
-    background-image: url(../images/hero/hero-bg_md@2x.jpg);
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/hero/hero-bg_md@2x.jpg);
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero-bg_md@2x.jpg);
   }
 }
 @media screen and (min-width: 1200px) {
@@ -773,7 +811,8 @@ body {
 }
 @media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
   .hero {
-    background-image: url(../images/hero/hero-bg_lg@2x.jpg);
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/hero/hero-bg_lg@2x.jpg);
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero-bg_lg@2x.jpg);
   }
 }
 
@@ -891,11 +930,6 @@ body {
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
-@media screen and (max-width: 767px) {
-  .team__item {
-    margin-bottom: 30px;
-  }
-}
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .team__item {
     --item: 2 ;
@@ -1008,11 +1042,6 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-@media screen and (max-width: 767px) {
-  .footer__list {
-    margin-bottom: 60px;
-  }
-}
 
 .footer__link {
   margin-bottom: 9px;
@@ -1023,17 +1052,12 @@ body {
   color: var(--accent-color);
 }
 
-@media screen and (max-width: 1199px) {
-  .footer__container {
-    text-align: center;
-  }
-}
 @media screen and (min-width: 768px) {
   .footer__container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    gap: 70px;
+    gap: 60px;
     -webkit-box-align: baseline;
         -ms-flex-align: baseline;
             align-items: baseline;
@@ -1043,10 +1067,32 @@ body {
         flex-wrap: wrap;
   }
 }
+@media screen and (max-width: 767px) {
+  .footer__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .footer__container {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
 
 .footer-address {
   font-style: inherit;
   color: rgba(255, 255, 255, 0.6);
+}
+
+@media screen and (max-width: 767px) {
+  .footer__contacts {
+    margin-bottom: 60px;
+  }
 }
 
 .footer-address__descr {
@@ -1084,8 +1130,16 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+@media screen and (min-width: 1200px) {
+  .footer-subscribe__form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
 
 .footer-subscribe__input {
+  display: block;
   width: 100%;
   font-size: 16px;
   line-height: 1.25;
@@ -1237,17 +1291,24 @@ body {
   letter-spacing: 0.03em;
   -webkit-transform: translateY(101%);
           transform: translateY(101%);
-  padding: 63px 24px;
+  padding: 24px;
   background-color: rgba(33, 150, 243, 0.9);
   -webkit-transition: -webkit-transform var(--anim-fast) var(--transition-func);
   transition: -webkit-transform var(--anim-fast) var(--transition-func);
   transition: transform var(--anim-fast) var(--transition-func);
   transition: transform var(--anim-fast) var(--transition-func), -webkit-transform var(--anim-fast) var(--transition-func);
 }
+@media screen and (min-width: 480px) {
+  .overlay {
+    padding: 63px 24px;
+  }
+}
 
 .overlay__descr {
+  height: 100%;
   font-size: 18px;
   line-height: 1.56;
+  overflow: auto;
   color: var(--text-color-white);
 }
 
