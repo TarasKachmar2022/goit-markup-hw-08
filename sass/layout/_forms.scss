@@ -101,7 +101,9 @@
 .register__checkbox:focus+.register__icon .register__icon--uncheck {
     fill: var(--accent-color);
 }
-
+.register__icon{
+    flex-shrink: 0;
+}
 .register__icon--uncheck {
     transition: fill var(--anim-fast) var(--transition-func);
 }
@@ -127,7 +129,8 @@
 }
 
 .register-form-agreement__text {
-    line-height: 2;
+    line-height: calc(14 / 12);
+    text-align: start;
     letter-spacing: 0.03em;
     user-select: none;
     text-underline-position: under;
